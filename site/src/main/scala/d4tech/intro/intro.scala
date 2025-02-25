@@ -126,7 +126,7 @@ val talk = DeckBuilder(1920, 1080)
        |  - the designer has no right to be wrong
        |""".stripMargin
   )
-  .landscapeImageSlide("assets/intro/rocketship.jpg", "Science vs Engineering", true)
+  .landscapeImageSlide("intro/rocketship.jpg", "Science vs Engineering", true)
   .landscapeImageSlide("https://images.pexels.com/photos/5387332/pexels-photo-5387332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "The trouble with being positiv(ist)", true)
   .markdownSlide(
     """|## Envisioned World Problem
@@ -158,7 +158,7 @@ val talk = DeckBuilder(1920, 1080)
   )
   .landscapeImageSlide("https://images.pexels.com/photos/4868553/pexels-photo-4868553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "People know everything about what they do; they just can't tell you", true)
   .landscapeImageSlide("https://images.pexels.com/photos/534078/pexels-photo-534078.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "Most design processes are iterative", true)
-  .landscapeImageSlide("assets/intro/iterativemodel.png", "General iterative model, eg in ISO 9241-210:2010", false)
+  .landscapeImageSlide("intro/iterativemodel.png", "General iterative model, eg in ISO 9241-210:2010", false)
   .markdownSlide(
     """|## Design Thinking
        |
@@ -169,10 +169,10 @@ val talk = DeckBuilder(1920, 1080)
        |* Test
        |""".stripMargin
   )
-  .landscapeImageSlide("assets/intro/designthinkingiterative.png", "Design Thinking", false)
-  .landscapeImageSlide("assets/intro/doublediamond.jpg", "Double Diamond, British Design Council", false)
-  .landscapeImageSlide("assets/intro/ideoanddoublediamond.jpg", "IDEO superimposed on Double Diamond", false)
-  .landscapeImageSlide("assets/intro/actionresearch.png", "Action Research", false)
+  .landscapeImageSlide("intro/designthinkingiterative.png", "Design Thinking", false)
+  .landscapeImageSlide("intro/doublediamond.jpg", "Double Diamond, British Design Council", false)
+  .landscapeImageSlide("intro/ideoanddoublediamond.jpg", "IDEO superimposed on Double Diamond", false)
+  .landscapeImageSlide("intro/actionresearch.png", "Action Research", false)
   .willCcBy
   .renderSlides
 
