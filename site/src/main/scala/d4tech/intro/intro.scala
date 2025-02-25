@@ -6,8 +6,8 @@ import d4tech.{*, given}
 
 val talk = DeckBuilder(1920, 1080)
   .titleSlide(
-    title="How we know what we know",
-    subtitle="Design is pragmatic"
+    title="Wicked problems and pragmatism",
+    subtitle="(or, why design isn't just science)"
   )
   .markdownSlide(
     """|## Epistemology
@@ -109,7 +109,70 @@ val talk = DeckBuilder(1920, 1080)
        |
        |""".stripMargin
   )
-  .markdownSlide("<img src='resources/ascilite2021/site-fixed-msg.png' width='1600' alt='A student fixed my bug' />").withClass("center")
+  .landscapeImageSlide("https://images.pexels.com/photos/1814397/pexels-photo-1814397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "Wicked Problems", true)
+  .markdownSlide(
+    """|# Wicked Problems
+       |
+       |* Rittel & Webber. Dilemmas in a general theory of planning, *Policy Sciences*, 1973.
+       |
+       |* Most design problems are problems where:
+       |
+       |  - people don't agree on the definition of the problem, and how you explain the problem determines the solution you'll come to
+       |  - the problem is unique, but can always be thought of as a symptom of another problem
+       |  - there's an unbounded set of potential solutions
+       |  - there is no "stopping rule" - you don't know when you're finished designing
+       |  - solutions aren't "true or false" but "good or bad"
+       |  - every attempt to solve the problem has impacts/effects
+       |  - the designer has no right to be wrong
+       |""".stripMargin
+  )
+  .landscapeImageSlide("assets/intro/rocketship.jpg", "Science vs Engineering", true)
+  .landscapeImageSlide("https://images.pexels.com/photos/5387332/pexels-photo-5387332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "The trouble with being positiv(ist)", true)
+  .markdownSlide(
+    """|## Envisioned World Problem
+       |
+       |* We’re designing for patterns of behaviour in the envisioned world where our product exists
+       |
+       |* But we can only examine the current world, where our product doesn’t exist
+       |
+       |## Design talks to the future
+       |
+       |* Experiments can tell you how the world is now
+       |
+       |* Design is about how we want the world to be
+       |""".stripMargin
+  )
+  .markdownSlide(
+    """|## Sampling
+       |
+       |* Positivists care deeply about getting a representative sample to eliminate biases in samples. 
+       |
+       |* In design, to begin with, we don't always know what a representative sample *is*
+       |
+       |  - There are more aspects that are different about you than we can list, let alone balance for
+       |
+       |  - It's not always clear what population a representative sample should be representative of  
+       |    (When they were building Twitter, how could they know who their users would be?)
+       |
+       |""".stripMargin
+  )
+  .landscapeImageSlide("https://images.pexels.com/photos/4868553/pexels-photo-4868553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "People know everything about what they do; they just can't tell you", true)
+  .landscapeImageSlide("https://images.pexels.com/photos/534078/pexels-photo-534078.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "Most design processes are iterative", true)
+  .landscapeImageSlide("assets/intro/iterativemodel.png", "General iterative model, eg in ISO 9241-210:2010", false)
+  .markdownSlide(
+    """|## Design Thinking
+       |
+       |* Empathise
+       |* Define
+       |* Ideate
+       |* Prototype
+       |* Test
+       |""".stripMargin
+  )
+  .landscapeImageSlide("assets/intro/designthinkingiterative.png", "Design Thinking", false)
+  .landscapeImageSlide("assets/intro/doublediamond.jpg", "Double Diamond, British Design Council", false)
+  .landscapeImageSlide("assets/intro/ideoanddoublediamond.jpg", "IDEO superimposed on Double Diamond", false)
+  .landscapeImageSlide("assets/intro/actionresearch.png", "Action Research", false)
   .willCcBy
   .renderSlides
 

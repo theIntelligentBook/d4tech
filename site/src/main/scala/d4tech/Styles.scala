@@ -24,6 +24,7 @@ object Styles {
       |""".stripMargin
   ).modifiedBy(
     ".cover img" -> "object-fit: cover; height: 100%;",
+    ".contain img" -> "object-fit: contain; max-height: 100%;",
     " img" -> "width: 100%;",
     ".pp img" -> "width: 50%;",
     " figcaption" ->
@@ -115,6 +116,18 @@ extension (db:DeckBuilder) {
    * Two portrait images, side by side to fill a slide
    */
   def portraitImageSlide(image1:String, caption:String):DeckBuilder = {
+    db.veautifulSlide(
+      <.div(^.cls := imageSlide.className,
+        <.img(^.src := image1),
+        <("figcaption")(caption)
+      )
+    )
+  }
+
+  /**
+   * Two portrait images, side by side to fill a slide
+   */
+  def rightImage(image1:String, caption:String)(f: VHtmlContent):DeckBuilder = {
     db.veautifulSlide(
       <.div(^.cls := imageSlide.className,
         <.img(^.src := image1),
