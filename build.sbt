@@ -15,7 +15,7 @@ libraryDependencies ++= Seq(
 ).map(_ % circeVersion)
 
 lazy val root = project.in(file("."))
-  .aggregate(commonJS, commonJVM, icsifier, site)
+  .aggregate(commonJS, commonJVM, site)
   .settings(
     Compile / fullLinkJSOutput / aggregate := false,
   )
@@ -70,19 +70,4 @@ lazy val site = project.in(file("site"))
       val opt = (Compile / fullOptJS).value
       IO.copyFile(opt.data, new java.io.File("site/target/compiled.js"))
     }
-  )
-
-
-lazy val icsifier = project.in(file("icsifier"))
-  .dependsOn(commonJVM)
-  .settings(
-    libraryDependencies ++= Seq(
-    
-
-      "org.apache.logging.log4j" % "log4j-slf4j-impl" % "2.20.0"
-    ),
-
-    excludeDependencies ++= Seq(
-    )
-
   )

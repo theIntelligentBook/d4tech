@@ -1,7 +1,7 @@
 //> using dep "com.wbillingsley::doctacular::0.3.0"
 //> using dep "org.scala-js::scalajs-dom::2.2.0"
 
-package simplesttalks
+package d4tech
 
 import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Future
@@ -11,8 +11,6 @@ import org.scalajs.dom
 
 import simplesttalks.core.{given, *}
 import scala.scalajs.js.JSON
-
-
 
 
 def loadLists():Future[Seq[TalkList]] = {
@@ -68,7 +66,6 @@ import com.wbillingsley.veautiful.html.*
 import com.wbillingsley.veautiful.doctacular.* 
 
 val site = Site()
-given styleSuite:StyleSuite = StyleSuite()
 
 val talkListStyle = Styling(
   """|
@@ -146,46 +143,29 @@ def renderTalks(title:String, talks:Seq[(TalkList, Talk)]) =
 
 def home = <.div(
   marked.div(
-    """|# Simple Talks Listing Service
+    """|# Design for the Technically Minded
        |
-       |This page lists talk series. You can access the series individually, or combined, via the links in the left side-bar.
+       |This is a work in progress - an online interactive book for teaching design and HCI to 
+       |students who have mostly a programming background.
        |
-       |**TODO**: Get this also publishing .ics files for each series, so you can add an automatically-updating calendar for each series
-       |
-       |The talks are editable in "hjson" (human-readable JSON), so it shouldn't be necessary to run a server.  
-       |
-       |Just use a text-editor to edit:
-       |* `talks/lists.json` to add new talk series
-       |* any of the `hjson` files in the `/talks/` directory to add new talks.
+       |Slide decks will be added as we go.
        |""".stripMargin 
     )
 )
 
 @main def main() = {
+  import site.given
 
-  for 
-    data <- loadData()
-  do 
+  site.toc = site.Toc(
+      ("Home" -> site.HomeRoute),  
+      ("Intro" -> site.Toc(
+        "How we know what we know" -> site.addDeck("intro", intro.talk)
+      ))      
+  )
 
-    site.toc = site.Toc(
-      (
-        ("Home" -> site.HomeRoute) +:
-        ("All talks" -> site.addPage("all", renderTalks("All talks", 
-          for 
-            (l, talks) <- data.toSeq
-            t <- talks
-          yield l -> t
-        ))) +:
-        data.keySet.toSeq.sortBy(_.series).map((series) => 
-          series.series -> site.addPage(series.short, renderTalks(series, data(series)))
-        )
-      )*
-    )
+  site.home = () => site.renderPage(home)
 
-    site.home = () => site.renderPage(home)
-    styleSuite.install()
-    site.attachToBody()
+  Styles.installStyles()
+  site.attachToBody()
 
-
-    println(data)
 }
