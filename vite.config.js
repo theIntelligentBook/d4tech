@@ -7,7 +7,7 @@ export default defineConfig({
     projectID: "site",  
   })],
   
-  base: '/simplest-talks-service/',
+  base: '/d4tech/',
   publicDir: 'assets',
 
   server: {

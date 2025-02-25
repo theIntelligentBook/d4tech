@@ -159,7 +159,7 @@ def home = <.div(
   site.toc = site.Toc(
       ("Home" -> site.HomeRoute),  
       ("Intro" -> site.Toc(
-        "How we know what we know" -> site.addDeck("intro", intro.talk)
+        "Wicked problems and pragmatism" -> site.addDeck("intro", intro.talk)
       ))      
   )
 
