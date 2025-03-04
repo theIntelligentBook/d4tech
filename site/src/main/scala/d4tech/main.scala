@@ -160,7 +160,10 @@ def home = <.div(
       ("Home" -> site.HomeRoute),  
       ("Intro" -> site.Toc(
         "Wicked problems and pragmatism" -> site.addDeck("intro", intro.talk)
-      ))      
+      )),
+      ("Empathise" -> site.Toc(
+        "Practical tips on picking a student design problem" -> site.addDeck("intro", empathise.practicalTips)
+      ))            
   )
 
   site.home = () => site.renderPage(home)
