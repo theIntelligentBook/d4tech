@@ -162,7 +162,7 @@ def home = <.div(
         "Wicked problems and pragmatism" -> site.addDeck("intro", intro.talk)
       )),
       ("Empathise" -> site.Toc(
-        "Practical tips on picking a student design problem" -> site.addDeck("intro", empathise.practicalTips)
+        "Practical tips on picking a student design problem" -> site.addDeck("picking_a_design_problem", empathise.practicalTips)
       ))            
   )
 
