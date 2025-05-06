@@ -134,10 +134,6 @@ val practicalTips = DeckBuilder(1920, 1080)
        |
        |* Sometimes there's' genuine good value in breaking a few constraints (so you don't just end up at the old solution), but you probably can't
        |  just break all of them.
-       |  
-       |---
-       |
-       |
        |
        |""".stripMargin
   )

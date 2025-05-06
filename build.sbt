@@ -5,7 +5,7 @@ val deployFull = taskKey[Unit]("Copies the fullLinkJS script to deployscripts/")
 
 import org.scalajs.linker.interface.ModuleSplitStyle
 
-ThisBuild / scalaVersion := "3.3.3"
+ThisBuild / scalaVersion := "3.3.5"
 val circeVersion = "0.14.1"
 
 libraryDependencies ++= Seq(
