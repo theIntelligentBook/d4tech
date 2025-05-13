@@ -169,6 +169,9 @@ def home = <.div(
       )),            
       ("Discovery" -> site.Toc(
         "Research through Design" -> site.addDeck("rtd", rtd.rtd)
+      )),
+      ("Smart interfaces" -> site.Toc(
+        "AI in interfaces" -> site.addDeck("ai1", ai.ai1)
       ))            
            
             
